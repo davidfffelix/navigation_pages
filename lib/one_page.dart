@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'two_page.dart';
-
 class OnePage extends StatelessWidget {
   const OnePage({super.key});
 
@@ -11,12 +9,14 @@ class OnePage extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            Navigator.of(context).pushNamed(
-              '/twoPage',
+            Navigator.of(context).pushNamed('/twoPage', arguments: 'Teste').then(
+              (value) {
+                print(value);
+              },
             );
-          },
+          }, 
           child: const Text(
-            'Ir para Segunda Page',
+            'Ir para Segunda Page  ',
           ),
         ),
       ),

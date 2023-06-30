@@ -11,16 +11,21 @@ class TwoPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var args = ModalRoute.of(context)!.settings.arguments as String;
+
     return Scaffold(
+      appBar: AppBar(),
       backgroundColor: Colors.blue.shade100,
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            // Navigator.of(context).pop();
-            Navigator.of(context).pushNamed('/');
+            // Navigator.of(context).pushNamed('/');
+            if (Navigator.of(context).canPop()) {
+              Navigator.of(context).pop('Retorno');
+            }
           },
-          child: const Text(
-            'Voltar para Primeira Page',
+          child: Text(
+            'Voltar para Primeira Page $args',
           ),
         ),
       ),
