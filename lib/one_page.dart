@@ -10,9 +10,10 @@ class OnePage extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: CustomButtonWidget(
-          disable: true,
+          disable: false,
           onPressed: () {},
           title: 'Custom Btn',
+          titleSize: 20,
           // onPressed: () {
           //   Navigator.of(context).pushNamed('/twoPage', arguments: 'Teste').then(
           //     (value) {
